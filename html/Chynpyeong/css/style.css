@@ -1,0 +1,614 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+    font-size: 20px;
+    list-style-type: none;
+    line-height: 1.6;
+}
+*::selection{
+    background-color: #d9a139;
+    color: #000;
+}
+*, ::after, ::before{
+    box-sizing: border-box;
+}
+
+/* Скролл */
+body::-webkit-scrollbar{
+    width: 12px;
+}
+body::-webkit-scrollbar-track{
+    box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: #f9f9fd;
+}
+body::-webkit-scrollbar-thumb{
+    border-radius: 5%;
+    background-color: #d9a139;
+    background-image: -webkit-linear-gradient(45deg,rgba(255, 255, 255, .25) 25%,
+                      transparent 25%,
+                      transparent 50%,
+                      rgba(255, 255, 255, .25) 50%,
+                      rgba(255, 255, 255, .25) 75%,
+                      transparent 75%,
+                      transparent);
+}
+
+/* Курсор */
+body{
+	cursor: url('../../../img/Cursor.png'), auto;
+}
+a{
+    cursor: url('../../../img/Cursor_pointer.png'), pointer;
+}
+
+/* Кнопка наверх */
+
+.buttonup{
+    position: fixed;
+    z-index: 1;
+    bottom: 20px;
+    right: 30px;
+}
+a.buttonup img{
+    width: 50px;
+    height: 38px;
+}
+
+/* Статичное меню */
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    box-shadow: 0px .5px 5px 0px black;
+    z-index: 1000;
+}
+.navContainer{
+    width: 1140px;
+    margin: auto;
+    user-select: none;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    flex-grow: 4;
+    flex-shrink: 1;
+    padding-top: 5px;
+}
+div.logo img{
+    width: 120px;
+}
+li{
+    list-style-type: none;
+}
+ul.topnav{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+ul.topnav li a{
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    margin: 2px 15px;
+    text-decoration: none;
+    font-size: 21px;
+}
+ul.topnav li.icona{
+    display: none;
+    position: absolute;
+    right: 10px;
+}
+ul.topnav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.hovers:hover{
+    border-bottom: 2px solid rgb(255, 255, 255);
+    padding-top: 2px;
+}
+
+
+/* Блок с описанием и приветствием */
+header{
+    z-index: 1;
+    position: relative;
+    height: 100vh;
+    background-image: url(../img/Chynpyeong.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+header::before{
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.3;
+}
+/* Приветствие */
+.hello{
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px black;
+    user-select: none;
+}
+#text{
+    font-size: 75px;
+}
+.text1{
+    width: 65%;
+    position: relative;
+    margin: 0 auto;
+    font-size: 25px;
+    text-align: center;
+}
+section{
+    margin-top: 50px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+}
+/* Анимация текста */
+.font-alt{
+    margin: 5px 0;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center!important;
+    color: rgb(0, 0, 0);
+    font-size: 35px;
+    user-select: none;
+    font-weight: bold;
+}
+.font-alt::after{
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom: 3px groove rgb(0, 0, 0);
+    border-right: 3px groove rgb(0, 0, 0);
+    transition: 0.3s;
+}
+.font-alt:hover::after{
+    width: 40px;
+    height: 10px;
+    transition: 0.3s;
+}
+.font-alt::before{
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 3px groove rgb(0, 0, 0);
+    border-left: 3px groove rgb(0, 0, 0);
+    transition: 0.3s;
+}
+.font-alt:hover::before{
+    width: 40px;
+    height: 10px;
+    transition: 0.3s;
+}
+.container{
+    padding-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+.section-heading{
+    text-align: center!important;
+}
+
+
+/* Блок рецепт */
+div.row{
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+div.start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+div.ingredients{
+    margin-left: 20px;
+}
+div.ingredients h3{
+    margin-block-end: 0;
+}
+div.ingredients ul{
+    margin-block-start: .5em;
+    padding-inline-start: 25px;
+    font-size: 18.5px;
+}
+div.ingredients ul b{
+    font-size: 19px;
+}
+div.foto img{
+    object-fit: cover;
+    width: 490px;
+    vertical-align: middle;
+    box-shadow: -4px 4px 10px 0px #7e7e7e;
+}
+div.finish{
+    margin-bottom: 20px;
+    font-size: 18.5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+div.finish img{
+    object-fit: cover;
+    height: 199px;
+    width: 348px;
+    vertical-align: middle;
+}
+div.finish div.etap{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 350px;
+    margin: 10px;
+    border: 1px solid #ddd;
+}
+div.etap span{
+    padding: 5px;
+}
+/* Пищевая и энергетическая ценность */
+.energyValue{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.energyValue b{
+    border-bottom: 1.5px solid rgb(0, 0, 0);
+}
+td{
+    padding: 0 30px 15px 30px;
+}
+
+
+/* Блок рекомендации */
+div.rows{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.blog-item {
+    margin: 15px 20px;
+    width: 350px;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+b.bl a.hovers:hover{
+    border-bottom: 2px solid rgb(0, 0, 0);
+    padding-top: 2px;
+}
+.blog-item .blog-content {
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+.blog-content h4 {
+    margin: 0;
+    padding: 0 10px;
+    font-size: 18px;
+}
+.blog-content p, .blog-content .bl{
+    font-size: 15.5px;
+}
+.blog-content span{
+    font-size: 13.5px;
+}
+.blog-content .bl{
+    text-transform: uppercase;
+}
+.blog-item img{
+    object-fit: cover;
+    height: 200px;
+    width: 350px;
+    vertical-align: middle;
+}
+
+
+/* Блок автора */
+.footer{
+    background: #000;
+    padding: 60px 0;
+}
+.footer p{
+    color: #ccc;
+    font-size: 14px;
+    margin: 15px 0 0;
+}
+.vfooter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+p.copyright a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 575.9px){
+    *{
+        font-size: 15px;
+    }
+    .logo{
+        padding-left: 5px;
+    }
+    div#menu{
+        flex-direction: column;
+        text-align: left;
+    }
+    .vmenu {
+        padding: 8px 10px;
+    }
+    ul.topnav li a {
+        font-size: 22px;
+    }
+    li.logo img{
+        width: 100px;
+    }
+    .navContainer{
+        width: 100%;
+    }
+    ul.topnav{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #text{
+        font-size: 50px;
+    }
+    .text1{
+        width: 75%;
+        font-size: 15px;
+    }
+    div.row{
+        flex-direction: column;
+        margin-top: 35px;
+    }
+    .font-alt{
+        font-size: 26px;
+    }
+    .font-altc{
+        width: 300px;
+    }
+    div.foto img{
+        width: 360px;
+    }
+    div.start{
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+    }    
+    .container{
+        margin-bottom: 20px;
+    }
+    div.ingredients {
+        margin-left: 0;
+        width: 360px;
+    }
+    div.ingredients h3 {
+        font-size: 18px;
+        text-align: center;
+    }
+    div.ingredients ul b {
+        font-size: 16px;
+    }
+    div.finish img{
+        height: 199px;
+        width: 278px;
+        margin-right: 0;
+    }
+    section div.section-heading{
+        padding-top: 15px;
+        padding-bottom: 35px;
+    }
+    section{
+        margin-top: 50px;
+    }
+    div.finish div.etap {
+        width: 280px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    td{
+        padding: 0 10px 15px 10px;
+    }
+    .footer p {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {  
+    .logo{
+        padding-left: 15px;
+    }
+    div#menu{
+        flex-direction: column;
+        text-align: left;
+    }
+    .navContainer{
+        width: 100%;
+    }
+    ul.topnav{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #text{
+        font-size: 60px;
+    }
+    .text1{
+        width: 75%;
+        font-size: 18px;
+    }
+    .font-alt{
+        font-size: 26px;
+    }
+    div.start{
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+    } 
+    div.ingredients {
+        margin-left: 0;
+        width: 450px;
+    }
+    div.ingredients h3{
+        text-align: center;
+    }
+    div.finish img{
+        height: 199px;
+        width: 278px;
+        margin-right: 0;
+    }
+    div.finish div.etap {
+        width: 280px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #text{
+        font-size: 70px;
+    }
+    .text1{
+        font-size: 22px;
+        width: 80%;
+    }
+    .navContainer{
+        width: 100%;
+    }
+    .logo{
+        padding-left: 20px;
+        flex-grow: 4;
+        flex-shrink: 1;
+    }
+    .logo img{
+        width: 130px;
+    }
+    ul.topnav li a {
+        display: block;
+        font-size: 23px;
+    }
+    .font-alt{
+        font-size: 26px;
+    }
+    div.start{
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+    } 
+    div.ingredients{
+        margin-left: 0;
+        width: 460px;
+    }
+    div.ingredients h3{
+        text-align: center;
+    }
+    div.finish img{
+        height: 199px;
+        width: 298px;
+    }
+    div.finish div.etap{
+        width: 300px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .logo{
+        padding-left: 20px;
+        flex: auto;
+    }
+    .navContainer{
+        width: 100%;
+    }
+    .text1{
+        width: 70%;
+        font-size: 22px;
+    }
+    div.foto img{
+        width: 440px;
+        height: 420px;
+    }
+    div.ingredients{
+        width: 500px;
+    }
+    div.ingredients ul {
+        padding-inline-start: 15px;
+    }
+    div.finish img{
+        height: 199px;
+        width: 298px;
+    }
+    div.finish div.etap{
+        width: 300px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1920px){
+    div.finish{
+        width: 80%;
+    }
+}
+@media screen and (max-width:680px) {
+    ul.topnav li:not(:first-child) {display: none;}
+    ul.topnav li.icona {display: inline-block;}
+    ul.topnav.resonsive {
+        position: relative;
+    }
+    ul.topnav.responsive li.icona {
+        position: absolute;
+        right: 15px;
+        top: 2px;
+    }
+    ul.topnav.responsive li {
+        float: none;
+        display: inline;
+    }
+    ul.topnav.responsive li a {
+        display: block;
+        text-align: left;
+    }
+}
